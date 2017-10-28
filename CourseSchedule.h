@@ -13,19 +13,15 @@ class CourseSchedule
 
 	private:
 		static int numCourses;
-		int maxSize;
+		const int maxSize;
 		Course* Courses;
-		//course(string, string, string, double, Date, Date, Time, Time);
-		//I don't think we need additional course data type as private member. 
-
 		string sname; // student name
 		Semester smester;
 		Date startDate;
 		Date endDate;
-		int checkDates(Semester, Date, Date);      //How do we call course private member variables?
+		int checkDates(Semester, Date, Date); 
 
 	public:
-		Course();
 		CourseSchedule(string, Semester, int);
 		~CourseSchedule();
 		string getStudentName() const;
