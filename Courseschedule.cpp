@@ -3,11 +3,8 @@
 CourseSchedule::CourseSchedule(string studentName, Semester semest, int num) : sname(studentName), smester(semest), maxSize(num)
 {
 	CourseSchedule::numCourses = 0;
-	Courses = new Course[maxSize];					// compile error!
+	Courses = new Course[maxSize];
 }
-
-CourseSchedule::CourseSchedule()
-{}									// test!
 
 CourseSchedule::~CourseSchedule()
 {
@@ -34,7 +31,6 @@ void CourseSchedule::setStudentName(string sn)
 	sname = sn;
 }
 
-
 // utility function 
 int CourseSchedule::checkDates(Semester sem, Date sDate, Date eDate)
 {
@@ -58,18 +54,24 @@ void CourseSchedule::addCourse(Course& cs, Semester sem, Date sDate, Date eDate)
 	//allow adding a course only when the dates are within the semester duration
 	if (checkDates(sem, sDate, eDate) == 5)
 	{
-		Courses[numCourses] = cs;			// compile error!
+		*(Courses + numCourses) = cs;			// compile error!
 		numCourses++;
 	}
-}
+}		
 
 void CourseSchedule::removeCourse()
 {
 	int sel;
+	int cnt;
 	cout << "몇 번째로 등록한 수업을 삭제하고 싶습니까?" << endl;				//It's kinda crude but it's a simplest way that I can think of.
 	cin >> sel;
 
-																				// we should search how to remove the element of the arry that is already declared.
+	cnt = sel - 1;
+
+	for (cnt; cnt < maxSize; cnt++)
+	{
+		*(Courses + cnt) = *(Courses + cnt + 1);
+	}
 }
 
 ostream &operator<<(ostream & output, const CourseSchedule & sched)
