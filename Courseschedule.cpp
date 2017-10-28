@@ -6,6 +6,9 @@ CourseSchedule::CourseSchedule(string studentName, Semester semest, int num) : s
 	Courses = new Course[maxSize];					// compile error!
 }
 
+CourseSchedule::CourseSchedule()
+{}									// test!
+
 CourseSchedule::~CourseSchedule()
 {
 	delete[] Courses;
