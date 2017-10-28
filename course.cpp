@@ -9,15 +9,11 @@ Course::Course(string csNum, string csName, string mtDays, double unt, Date stDa
 {
 }
 
-Course::Course()
-{}
-
 //destructor
 Course::~Course()
 {
 	cout << "The course has been deleted. " << endl;
 }
-
 
 ///////////////////////////////////////////get functions
 string Course::getCourseNum() const
