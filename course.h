@@ -8,7 +8,7 @@ using namespace std;
 
 class Course
 {
-	friend ostream &operator<<(ostream &, const Course &);
+	friend ostream &operator<<(ostream &, Course &);
 
 private:
 	string courseNum;
@@ -21,7 +21,6 @@ private:
 	Time endTime;
 
 public:
-	Course();
 	Course(string, string, string, double, Date, Date, Time, Time);
 	~Course();
 	string getCourseNum() const;
