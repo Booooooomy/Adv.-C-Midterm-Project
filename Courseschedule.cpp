@@ -62,6 +62,11 @@ void CourseSchedule::addCourse(Course& cs, Semester sem, Date sDate, Date eDate)
 
 void CourseSchedule::removeCourse()
 {
+	int sel;
+	cout << "몇 번째로 등록한 수업을 삭제하고 싶습니까?" << endl;				//It's kinda crude but it's a simplest way that I can think of.
+	cin >> sel;
+
+																				// we should search how to remove the element of the arry that is already declared.
 }
 
 ostream &operator<<(ostream & output, const CourseSchedule & sched)
