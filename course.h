@@ -21,6 +21,7 @@ private:
 	Time endTime;
 
 public:
+	Course();
 	Course(string, string, string, double, Date, Date, Time, Time);
 	~Course();
 	string getCourseNum() const;
