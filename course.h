@@ -6,12 +6,9 @@
 #include "Date.h"
 using namespace std;
 
-// note to myself:  the files are not in the same folder as project1 is.  Make sure to move them later 
-
 class Course
 {
 	friend ostream &operator<<(ostream &, const Course &);
-	friend istream &operator>>(istream &, Course &);
 
 private:
 	string courseNum;
@@ -38,7 +35,6 @@ public:
 	Course& setCourseNum(string&);
 	Course& setCourseName(string&);
 	Course& setMeetDays(string&);
-
 };
 
 #endif
