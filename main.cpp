@@ -12,9 +12,11 @@ int main()
 	string semesterName;
 	Date startDate;
 	Date endDate;
+	Time startTime;
+	Time endTime;
 	int maxNum;
 	char sel;
-	int courseNum;
+	string courseNum;
 	string courseName;
 	string meetingDays;
 	int numOfUnits;
@@ -31,7 +33,7 @@ int main()
 	cin >> maxNum;
 
 	Semester sem(semesterName, startDate, endDate);
-	CourseSchedule cou(name, semesterName, maxNum);  // still has a problem derieved from courseschedule cpp file.
+	CourseSchedule cou(name, semesterName, maxNum); // still has a problem derieved from courseschedule cpp file.
 	
 	do
 	{
@@ -41,31 +43,51 @@ int main()
 		if (sel == '1')
 		{
 			cout << "The course number?" << endl;
-			cin >> courseNum;
+			cin >> courseNum;						// cin cannot include space tho... maybe we should change this into cget(,)
 			cout << "The course name?" << endl;
 			cin >> courseName;
-			cout << "When does the class meet?" << endl;
+			cout << "What days does the class meet?" << endl;
 			cin >> meetingDays;
 			cout << "How many units is the class?" << endl;
 			cin >> numOfUnits;
-			// it says to use a classschedule function in courseschedule class. that should be done before this step.
+			cout << "What time does your class start?" << endl;
+			cin >> startTime;
+			cout << "Verify your class's starting time" << endl;
+			cout << startTime << endl;
+			cout << "What time does your class end?" << endl;
+			cin >> endTime;
+			cout << "Verify your class's ending time" << endl;
+			cout << endTime << endl;
+			cout << "What date does your class start?" << endl;
+			cin >> startDate;
+			cout << "Verify your class's starting date" << endl;
+			cout << startDate << endl;
+			cout << "What date does your class end?" << endl;
+			cin >> endDate;
+			cout << "Verify your class's end date" << endl;
+			cout << endDate << endl;
+
+			Course cou(courseNum, courseName, meetingDays, numOfUnits, startDate, endDate, startTime, endTime);
+
+			// it says to use a classschedule function. this should be done once we're done with classschedule in courseschedule class.
 		}
 		else if (sel == '2')
 		{
-			
+
 		}
 		else if (sel == '3')
 		{
-
+			cout << "Your class schedule:" << endl;
+//			cout << cou << endl;  uncommend if cou works.
 		}
 		else if (sel == 'q' || sel == 'Q')
 		{
-			cout << "You chose to get out. BYE!" << endl;
+
 		}
 		else
 		{
 			cout << "Invalid selection. Try again." << endl;
-			FirstScene();
+			FirstScene(sem);
 			cin >> sel;
 		}
 	} while (sel != 'q' && sel != 'Q');
