@@ -25,6 +25,7 @@ class CourseSchedule
 		int checkDates(Semester, Date, Date);      //How do we call course private member variables?
 
 	public:
+		Course();
 		CourseSchedule(string, Semester, int);
 		~CourseSchedule();
 		string getStudentName() const;
