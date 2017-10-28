@@ -62,28 +62,6 @@ void CourseSchedule::addCourse(Course& cs, Semester sem, Date sDate, Date eDate)
 
 void CourseSchedule::removeCourse()
 {
-	char sel;
-	cout << "Do you want to remove any course on the schedule?" << endl;
-	cout << "if yes, press 'y'. if not, press 'n'" << endl;
-	cin >> sel;
-
-	do
-	{
-		if (sel == 'y')
-		{
-			// remove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		}
-		else if (sel == 'n')
-		{
-		}
-		else
-		{
-			cout << "Invalid selection" << endl;
-			cout << "Do you want to remove any course on the schedule?" << endl;
-			cout << "if yes, press 'y'. if not, press 'n'" << endl;
-			cin >> sel;
-		}
-	} while (sel != 'n');
 }
 
 ostream &operator<<(ostream & output, const CourseSchedule & sched)
