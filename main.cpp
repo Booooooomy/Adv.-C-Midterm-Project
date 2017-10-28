@@ -4,7 +4,7 @@
 #include "CourseSchedule.h"
 using namespace std;
 
-void FirstScene();
+void FirstScene(Semester);
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
 	
 	do
 	{
-		FirstScene();
+		FirstScene(sem);
 		cin >> sel;
 
 		if (sel == '1')
@@ -48,11 +48,11 @@ int main()
 			cin >> meetingDays;
 			cout << "How many units is the class?" << endl;
 			cin >> numOfUnits;
-			
+			// it says to use a classschedule function in courseschedule class. that should be done before this step.
 		}
 		else if (sel == '2')
 		{
-
+			
 		}
 		else if (sel == '3')
 		{
@@ -60,7 +60,7 @@ int main()
 		}
 		else if (sel == 'q' || sel == 'Q')
 		{
-
+			cout << "You chose to get out. BYE!" << endl;
 		}
 		else
 		{
@@ -72,7 +72,7 @@ int main()
 
 }
 
-void FirstScene()
+void FirstScene(Semester sem)
 {
 	cout << "COURSE ENTRY MENU FOR: " << setw(11) << sem.getSemesterName << " (" << sem.getStartDate << "-" << sem.getEndDate << ")" << endl;
 	cout << "----------------------------------------------------------------" << endl;
