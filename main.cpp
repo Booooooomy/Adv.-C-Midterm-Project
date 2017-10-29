@@ -23,7 +23,6 @@ int main()
 	string meetingDays;
 	int numOfUnits;
 
-	/* so tired of plugging the same info again and again.. use default values when testing
 	cout << "What's your name?" << endl;
 	getline(cin,name);
 	cout << "What semester?" << endl;
@@ -33,7 +32,7 @@ int main()
 	cin.ignore();
 	cout << "Ending date?" << endl;
 	cin >> semEnDate;
-	cin.ignore();*/
+	cin.ignore();
 	cout << "Maximum number of classes?" << endl;
 	cin >> maxNum;
 
