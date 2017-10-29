@@ -1,7 +1,6 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
-
 #include "Date.h"
 
 //constructor validates month and calls utility function to validate day
@@ -10,10 +9,12 @@ Date::Date(int mn, int dy, int yr)
 	setDate(mn, dy, yr);
 }
 
-//destructor
+//destructor may not be needed
+/*
 Date::~Date()
 {
-}
+cout << "The destructor for date class has been called." << endl;
+} */
 
 // get/set functions - cascading allowed by *this 
 Date& Date::setDate(int mn, int dy, int yr)
@@ -26,7 +27,7 @@ Date& Date::setDate(int mn, int dy, int yr)
 
 Date& Date::setMonth(int mn)
 {
-	month = (mn >= 1 && mn <= 31) ? mn : 1;
+	month = (mn >= 1 && mn <= 12) ? mn : 1;
 	return *this;
 }
 
@@ -38,7 +39,7 @@ Date& Date::setDay(int dy)
 
 Date& Date::setYear(int yr)
 {
-	year = (yr >= 2001 && yr <= 2999) ? yr : 2017;
+	year = (yr >= 2001 && yr <= 2099) ? yr : 2017;
 	return *this;
 }
 
@@ -80,15 +81,15 @@ int Date::checkDay(int testDay) const
 // iostream operator
 ostream &operator << (ostream &output, const Date &date)
 {
-	output << setfill('0') << setw(2) << date.month << "/" << setw(2) << date.day << setw(2) << date.year;
+	output << setfill('0') << setw(2) << date.month << "/" << setw(2) << date.day << "/" << setw(2) << date.year;
 	return output;
 }
 
 istream &operator >> (istream &input, Date &date)
 {
-	// check if it assepts 6 as if 06 was entered ////////////////////////
+	// check if it assepts 6 as if 06 was entered--->works
 
-	// asssume that input is MM/DD/YYYY form
+	// input is in MM/DD/YYYY format
 	input >> setw(2) >> date.month;
 	input.ignore(); // skip /
 	input >> setw(2) >> date.day;
@@ -97,22 +98,47 @@ istream &operator >> (istream &input, Date &date)
 	return input;
 }
 
-// note: maybe I should change startTime to more common time class later 
-// (I need to check endtime of classes as well) 
 bool Date::operator > (const Date &right) const
 {
-	//can't directly access to private member variable in different class -- use get functions 
-	return (StartTime.getHour() > right.StartTime.getHour() && StartTime.getMinute() > right.StartTime.getMinute() ? true : false);
+	bool status = false;
+
+	//compare year first -> only if the year is the same, then check the month -> and same for the day 
+	if (year > right.year)
+	{
+		status = true;
+	}
+	else if (year == right.year)
+	{
+		if (month > right.month)
+		{
+			status = true;
+		}
+		else if (month == right.month)
+		{
+			if (day > right.day)
+			{
+				status = true;
+			}
+		}
+	}
+	return status;
+}
+
+void Date::operator = (const Date &right) //wouldn't be const
+{
+	month = right.month;
+	day = right.day;
+	year = right.year;
 }
 
 bool Date::operator < (const Date &right) const
 {
-	return !(operator >(right)); // does it work?
+	return !(operator >(right)); // it does work. bb
 }
 
 bool Date::operator == (const Date &right) const
 {
-	return (StartTime.getHour() == right.StartTime.getHour() && StartTime.getMinute() == right.StartTime.getMinute() ? true : false);
+	return ((month == right.month && day == right.day && year == right.year) ? true : false);
 }
 
 bool Date::operator != (const Date &right) const
