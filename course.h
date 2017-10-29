@@ -8,7 +8,7 @@ using namespace std;
 
 class Course
 {
-	friend ostream &operator<<(ostream &, Course &);
+	friend ostream &operator<<(ostream &, const Course &);
 
 private:
 	string courseNum;
@@ -21,7 +21,8 @@ private:
 	Time endTime;
 
 public:
-	Course(string, string, string, double, Date, Date, Time, Time);
+	//by adding member initializers we don't need the default constructor 
+	Course(string = "", string = "", string = "", double = 0.0, Date = (0, 0, 0), Date = (0, 0, 0), Time = (0, 0, 0), Time = (0, 0, 0));
 	~Course();
 	string getCourseNum() const;
 	string getCourseName() const;
@@ -32,9 +33,19 @@ public:
 	Time getStartTime() const;
 	Time getEndTime() const;
 
+	void remove(Course*);
+	void replace(Course*, int);
+
 	Course& setCourseNum(string&);
 	Course& setCourseName(string&);
 	Course& setMeetDays(string&);
+	void setUnit(double);
+	Course& setStartDate(Date&);
+	Course& setEndDate(Date&);
+	Course& setStartTime(Time&);
+	Course& setEndTime(Time&);
+
+	void operator= (const Course& cs);
 };
 
 #endif
