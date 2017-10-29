@@ -13,20 +13,19 @@ class Semester
 
 private:
 	string semesterName;
-	Date startDate;
-	Date endDate;
+	Date semStartDate;
+	Date semEndDate;
 
 public:
 	Semester(string, Date, Date);
-	~Semester();
+	//~Semester();
 
 	Semester& setSemesterName(string&);
-	Semester& setStartDate(Date&);
-	Semester& setEndDate(Date&);
+	Semester& setSemStartDate(Date&);
+	Semester& setSemEndDate(Date&);
 	string getSemesterName() const;
-	Date getStartDate() const;
-	Date getEndDate() const;
-
+	Date getSemStartDate() const;
+	Date getSemEndDate() const;
 };
 
 #endif SEMESTER_H
