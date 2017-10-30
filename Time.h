@@ -2,6 +2,8 @@
 #ifndef TIME_H
 #define TIME_H
 #include <string>
+#include <iostream>
+using namespace std;
 
 class Time
 {
@@ -16,11 +18,13 @@ private:
 
 public:
 	Time(int = 0, int = 0);
+
 	Time& setTime(int, int);
 	Time& setHour(int);
 	Time& setMinute(int);
 	int getHour() const;
 	int getMinute() const;
+	string getAmorpm() const;
 	void printUniversal() const;
 	void printStandard() const;
 	double operator-(Time&);
