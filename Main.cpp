@@ -27,10 +27,10 @@ int main()
 	getline(cin,name);
 	cout << "What semester?" << endl;
 	getline(cin, semesterName);
-	cout << "Starting date?" << endl;
+	cout << "Starting date of the semester? - month (enter) day (enter) 4-digit year" << endl;
 	cin >> semStDate;
 	cin.ignore();
-	cout << "Ending date?" << endl;
+	cout << "Ending dateof the semester? - month (enter) day (enter) 4-digit year" << endl;
 	cin >> semEnDate;
 	cin.ignore();
 	cout << "Maximum number of classes?" << endl;
@@ -49,35 +49,34 @@ int main()
 			cout << "The course number?" << endl;
 			cin >> courseNum;
 			cin.ignore();
-			cout << "The course name?" << endl;												// << courseName 이 숫자면 ㅇㅋ 아니면 안 됨.
+			cout << "The course name?" << endl;												
 			getline(cin, courseName);
 			cout << "What days does the class meet?" << endl;
 			cin >> meetingDays;
 			cin.ignore();
 			cout << "How many units is the class?" << endl;
 			cin >> numOfUnits;
-			cout << "What time does your class start?" << endl;
+			cout << "What time does your class start? - hour (enter) minute (enter) AM / PM" << endl;
 			cin >> startTime;
 			cin.ignore();
 			cout << "Verify your class's starting time" << endl;
 			cout << startTime << endl;
-			cout << "What time does your class end?" << endl;
+			cout << "What time does your class end? - hour (enter) minute (enter) AM / PM" << endl;
 			cin >> endTime;
 			cin.ignore();
 			cout << "Verify your class's ending time" << endl;
 			cout << endTime << endl;
 			///////////
-			cout << "What date does your class start?" << endl;
+			cout << "What date does your class start? - month(enter) day(enter) 4 - digit year" << endl;
 			cin >> startDate;
 			cin.ignore();
 			cout << "Verify your class's starting date" << endl;
 			cout << startDate << endl;
-			cout << "What date does your class end?" << endl;
+			cout << "What date does your class end?  - month (enter) day (enter) 4-digit year" << endl;
 			cin >> endDate;
 			cin.ignore();
 			cout << "Verify your class's end date" << endl;
 			cout << endDate;
-			///////////
 
 			Course cou(courseNum, courseName, meetingDays, numOfUnits, startDate, endDate, startTime, endTime);
 			schedule.addCourse(cou, sem, startDate, endDate);
