@@ -64,7 +64,7 @@ void CourseSchedule::addCourse(Course& cou, Semester sem, Date sDate, Date eDate
 		{
 			Courses[numCourses] = cou;
 			numCourses++;
-			cout << "\nThe class has been successfully added to your schedule." << endl;
+			cout << "\n\nThe class has been successfully added to your schedule." << endl;
 		}
 		else if (status == startD)
 		{
@@ -110,7 +110,7 @@ void CourseSchedule::removeCourse()
 	{
 		Courses[cnt].replace(Courses, sel);
 	}
-	cout << "The has successfully been removed from your schedule!" << endl;
+	cout << "\nThe has successfully been removed from your schedule!" << endl;
 
 	numCourses--;
 }
