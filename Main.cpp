@@ -30,7 +30,7 @@ int main()
 	cout << "Starting date of the semester? - month (enter) day (enter) 4-digit year" << endl;
 	cin >> semStDate;
 	cin.ignore();
-	cout << "Ending dateof the semester? - month (enter) day (enter) 4-digit year" << endl;
+	cout << "Ending date of the semester? - month (enter) day (enter) 4-digit year" << endl;
 	cin >> semEnDate;
 	cin.ignore();
 	cout << "Maximum number of classes?" << endl;
