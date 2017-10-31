@@ -1,3 +1,8 @@
+/*
+CS 137 - Midterm Project 2017
+Team EECS
+*/
+
 #ifndef COURSE_H
 #define COURSE_H
 
@@ -9,7 +14,6 @@ using namespace std;
 class Course
 {
 	friend ostream &operator<<(ostream &, const Course &);
-
 private:
 	string courseNum;
 	string courseName;
@@ -33,6 +37,7 @@ public:
 	Time getStartTime() const;
 	Time getEndTime() const;
 
+	//for manipulating courses in CourseSchedule class
 	void remove(Course*);
 	void replace(Course*, int);
 

@@ -1,3 +1,8 @@
+/*
+CS 137 - Midterm Project 2017
+Team EECS
+*/
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -54,20 +59,20 @@ double Time::operator-(Time& classTime)
 
 ostream& operator<<(ostream& output, const Time& classTime)
 {
-	output << classTime.getHour() << ":" << classTime.getMinute() << " " << classTime.amorpm ;
-/*	output << ((classTime.hour == 0 || classTime.hour == 12) ? 12 : classTime.hour % 12) << ":"
-		<< setfill('0') << setw(2) << classTime.minute << " "
-		<< setw(2) << ((classTime.hour) < 12 ? "AM" : "PM");
-*/	return output;
+	output << setfill('0') << setw(2) << classTime.hour << ":" << setfill('0') << setw(2) << classTime.minute << " " << classTime.amorpm;
+	/*output << ((classTime.hour == 0 || classTime.hour == 12) ? 12 : classTime.hour % 12) << ":"
+	<< setfill('0') << setw(2) << classTime.minute << " "
+	<< setw(2) << ((classTime.hour) < 12 ? "AM" : "PM");*/
+	return output;
 }
 
 istream& operator>>(istream& input, Time& classTime)
 {
-	input >> classTime.hour;
-	//input.ignore();
-	input >> classTime.minute;
-	//input.ignore();
-	input >> classTime.amorpm;
+	input >> setw(2) >> classTime.hour;
+	input.ignore();
+	input >> setw(2) >> classTime.minute;
+	input.ignore();
+	input >> setw(2) >> classTime.amorpm;
 	return input;
 }
 

@@ -1,4 +1,8 @@
-//Time Class Definition with const member functions
+/*
+CS 137 - Midterm Project 2017
+Team EECS
+*/
+
 #ifndef TIME_H
 #define TIME_H
 #include <string>

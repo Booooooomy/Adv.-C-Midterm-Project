@@ -18,6 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Course.cpp" />
+    <ClCompile Include="CourseSchedule.cpp" />
+    <ClCompile Include="Date.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Semester.cpp" />
+    <ClCompile Include="Time.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Course.h" />
+    <ClInclude Include="CourseSchedule.h" />
+    <ClInclude Include="Date.h" />
+    <ClInclude Include="Semester.h" />
+    <ClInclude Include="Time.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{0DC92D7B-C56E-434B-B9A0-09F3C3045F8D}</ProjectGuid>
@@ -110,21 +125,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="course.cpp" />
-    <ClCompile Include="Courseschedule.cpp" />
-    <ClCompile Include="date.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="semester.cpp" />
-    <ClCompile Include="time.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="course.h" />
-    <ClInclude Include="CourseSchedule.h" />
-    <ClInclude Include="date.h" />
-    <ClInclude Include="semester.h" />
-    <ClInclude Include="time.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

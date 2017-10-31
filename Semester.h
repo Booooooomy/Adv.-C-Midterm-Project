@@ -1,3 +1,8 @@
+/*
+CS 137 - Midterm Project 2017
+Team EECS
+*/
+
 #ifndef SEMESTER_H
 #define SEMESTER_H
 
@@ -17,8 +22,7 @@ private:
 	Date semEndDate;
 
 public:
-	Semester(string, Date, Date);
-	//~Semester();
+	Semester(string = "Semetser Name", Date = (1, 1, 2017), Date = (1, 1, 2017));
 
 	Semester& setSemesterName(string&);
 	Semester& setSemStartDate(Date&);

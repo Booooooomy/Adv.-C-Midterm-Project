@@ -1,3 +1,8 @@
+/*
+CS 137 - Midterm Project 2017
+Team EECS
+*/
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -9,14 +14,9 @@ Date::Date(int mn, int dy, int yr)
 	setDate(mn, dy, yr);
 }
 
-//destructor may not be needed
-/*
-Date::~Date()
-{
-cout << "The destructor for date class has been called." << endl;
-} */
-
-// get/set functions - cascading allowed by *this 
+////////////////////////////////////////////////////////////////
+/////////////////// GET SET FUNCTIONS //////////////////////////
+////////////////////////////////////////////////////////////////
 Date& Date::setDate(int mn, int dy, int yr)
 {
 	setMonth(mn);
@@ -78,7 +78,9 @@ int Date::checkDay(int testDay) const
 	return 1;  //keep data in valid state
 }
 
-// iostream operator
+////////////////////////////////////////////////////////////////
+//////////////////////// OPERATORS /////////////////////////////
+//////////////////////////////////////////////////////////////// 
 ostream &operator << (ostream &output, const Date &date)
 {
 	output << setfill('0') << setw(2) << date.month << "/" << setw(2) << date.day << "/" << setw(2) << date.year;
@@ -103,6 +105,7 @@ bool Date::operator > (const Date &right) const
 	bool status = false;
 
 	//compare year first -> only if the year is the same, then check the month -> and same for the day 
+	//could've done with switch 
 	if (year > right.year)
 	{
 		status = true;
@@ -124,7 +127,7 @@ bool Date::operator > (const Date &right) const
 	return status;
 }
 
-void Date::operator = (const Date &right) //wouldn't be const
+void Date::operator = (const Date &right)
 {
 	month = right.month;
 	day = right.day;
